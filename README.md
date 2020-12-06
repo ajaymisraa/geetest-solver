@@ -7,10 +7,10 @@ Also, please keep in mind, this was initially frontend based, then transformed t
 
 This is experimental.
 
-## Purpose and use of a Geetest automated captcha solver. 
+### Purpose and use of a Geetest automated captcha solver. 
 Of course, there are obvious use cases. Notably to solve captchas automatically. But keep in mind this is yours to explore and reflect on! 
 
-## Installation 
+### Installation 
 If you look at the index.js file, you can see that I left comments on where to edit for implementation of some sort into your software. You must port in your captcha urls, proper cids, proxy managing systems, solver systems, and more to implement properly. Unfortuantetly, I have learned these factors differ per application, forcing me to completely let the user edit and conform the code to fit. 
 
 ### Compliments Where Compliments Are Due. 
