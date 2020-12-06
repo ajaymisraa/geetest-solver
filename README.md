@@ -16,3 +16,5 @@ If you look at the index.js file, you can see that I left comments on where to e
 ### Compliments Where Compliments Are Due. 
 I honestly do not know where the initial code has came from. Found the skeleton of the code in my projects folder due to me working on geetest a few months ago and have not really cited any specifics. If you did create a portion of this code, please dm me on twitter and I will credit you. 
 
+### Other Things to Acknowledge 
+This is not a substitute for a captcha solver. Not even in the slightest. It is a way to reflect upon how to construct a geetest captcha autosolving solution, taking advantage of where I can. 
