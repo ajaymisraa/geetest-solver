@@ -32,7 +32,7 @@ async function findPuzzlePosition (page) {
 }
 
 async function findDiffPosition (page) {
-    await page.waitFor(100)
+    await page.waitForTimeout(100)
 
     let srcImage = await Jimp.read('./diff.png')
     let src = cv.matFromImageData(srcImage.bitmap)
@@ -61,13 +61,13 @@ async function findDiffPosition (page) {
 }
 
 async function saveSliderCaptchaImages(page) {
-    await page.waitForSelector('[aria-label="Click to verify"]')
-    await page.waitFor(1000)
+    await page.waitForSelector('div.geetest_radar_tip')
+    await page.waitForTimeout(1000)
 
-    await page.click('[aria-label="Click to verify"]')
+    await page.click('div.geetest_radar_tip')
 
     await page.waitForSelector('.geetest_canvas_img canvas', { visible: true })
-    await page.waitFor(1000)
+    await page.waitForTimeout(1000)
     let images = await page.$$eval('.geetest_canvas_img canvas', canvases => {
         return canvases.map(canvas => canvas.toDataURL().replace(/^data:image\/png;base64,/, ''))
     })
@@ -104,7 +104,7 @@ async function run () {
     if (captcha > 0) { 
     await page.goto(cSite, { waitUntil: 'networkidle2' })
 
-    await page.waitFor(1000)
+    await page.waitForTimeout(1000)
 
     await saveSliderCaptchaImages(page)
     await saveDiffImage()
@@ -123,7 +123,7 @@ async function run () {
     yPosition = handle.y + handle.height / 3
     await page.mouse.move(xPosition, yPosition, { steps: 25 })
 
-    await page.waitFor(100)
+    await page.waitForTimeout(100)
 
     let [cxPuzzle, cyPuzzle] = await findPuzzlePosition(page)
 
@@ -132,7 +132,7 @@ async function run () {
     await page.mouse.move(xPosition, yPosition, { steps: 5 })
     await page.mouse.up()
 
-    await page.waitFor(3000)
+    await page.waitForTimeout(3000)
     // success!
     
     await fs.unlink('./original.png')
