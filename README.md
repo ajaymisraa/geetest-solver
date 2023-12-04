@@ -1,4 +1,10 @@
 # Datadome Geetest Captcha Solver
+### Comments from Dec. 4, 2023
+
+This was written a few years back and is still functional but, keep in mind, not incredible as it was one of my first ML projects. It is based off of some Rust philosophy and primarily works from OpenCV logic. The weights and training data were from a private source so I kept that private. I am no longer working on this project avidly, however, as geetest is still a popular anti-bot manuever for many sites, it is very much so still relevant. 
+
+### Overview
+
 This solver is exclusively meant for educational purposes. The software in this respository contains no information on my other projects as this repository merely just compliments. 
 
 This geetest solver is used to automatically solve the anti-bot measures instilled by some sites like Footsites and more. 
